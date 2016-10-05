@@ -1,0 +1,38 @@
+# define physics
+
+/macro/phys/addPhysics G4EmStandardPhysics_option4
+/run/setCut 1 um
+/macro/phys/minEnergy 100 eV
+
+# define geometry
+/macro/det/useCustomGeometry true
+/macro/det/geometryName microplate
+
+#Energy threshold to save
+/macro/det/energyThreshold 1000 GeV
+
+# initialize
+/run/initialize
+
+#Define Source
+/macro/source/geometry circle
+/macro/source/rad 150 mm
+/macro/source/centre -5.5 5.5 30.0 mm
+/macro/source/energyAngleFile events.dat
+/macro/source/isMuon true
+
+/macro/source/initialize
+
+#/vis/open HepRepFile
+#/vis/heprep/setFileDir ./macrodata/
+#/vis/heprep/setOverwrite false
+#/vis/drawVolume world
+#/vis/viewer/flush
+#/vis/scene/add/trajectories
+#/vis/scene/add/hits
+#/vis/scene/endOfEventAction accumulate 1000
+
+/run/printProgress 1000000
+/run/beamOn 100000000
+
+

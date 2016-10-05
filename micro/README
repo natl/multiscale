@@ -1,0 +1,123 @@
+
+     =========================================================
+     Geant4 - multiscale/micro example
+     =========================================================
+
+                            README file
+                            -----------
+CORRESPONDING AUTHOR
+Nathanael Lampe
+Université Blaise Pascal, Clermont-Ferrand, France
+lampe@clermont.in2p3.fr
+
+SUMMARY
+This example shows the simulation of cells in a periodic domain with a
+source uniformly distributed throughout the simulation domain. This
+provides a means of simulating the impact of secondary electrons
+created in water upon cells. The periodic domain and source
+configuration eliminate any spatial bias from the simulation.
+
+0- MACRO PARTICULARITIES
+    When defining the macro file for this simulation, the order in which
+    the geometry and physics is defined is important, due to the
+    dependance of the the periodic boundary condition upon the periodic
+    domain defined in the parallel world. As such, these commands need to
+    be ordered in the following way
+
+    /micro/det/setSize     # will set the size of the periodic domain
+    /micro/det/setMargin   # parameter that controls secondary production
+    /micro/phys/addPhysics # physics list is dependant upon the setSize
+    /run/initialize        # build physics and detector
+    /gps/...               # Any GPS commands after initialisation
+
+    This behaviour means that while the geometry can be updated by
+    calling /micro/det/update, this will not change the geometry of
+    the periodic region, which is tied to the physics list and hence the
+    initialision step.
+
+
+1- GEOMETRY DEFINITION
+    The geometry in this simulation is a small box with a periodic boundary
+    condition. That is, particles that leave the box on the -z side will re-
+    enter on the +z side. The size of the simulation domain should be
+    slightly larger than the largest path traversable by a particle
+    simulated. For 100 keV electrons, for example, a 200um size box is
+    appropriate.
+
+    Cells are placed randomly in this domain as the sensitive detectors. The
+    simulation detects when a cell is hit, and records its point and direction
+    of entry, as well as the energy deposits made within the cell - their
+    locations and magnitude.
+
+2- SET UP
+
+3- HOW TO RUN THE EXAMPLE
+
+
+4- TEST MODE
+
+5- SUMMARY OF MACRO COMMANDS
+
+    /micro/det
+        /micro/det/setSize double unit
+            Set size of the simulation domain. The size is the side length
+            of the square that defines the simulation area
+        /micro/det/setMargin double unit
+            Set the "safety margin" parameter that controls the two volumes
+            just inside and outside the periodic region. These volumes act to
+            reduce energy loss from the periodic domain caused by secondaries
+            that do not experience the periodic boundary process. The parameter
+            should be greater than 0.001 nm, typical values are on the order of
+            1nm
+        /micro/det/update
+            Re-initialise the geometry. Will not change the periodic boundary
+            size.
+
+    /micro/cell
+        /micro/cell/setShape string
+            Set the shape of the solid that will make up each cell. Options
+            are:
+                "ellipse"
+                "sphere"
+        /micro/cell/setSizeHalfX  double unit
+        /micro/cell/setSizeHalfY  double unit
+        /micro/cell/setSizeHalfZ  double unit
+        /micro/cell/setSizeRadius double unit
+            Use these commands to set the half lengths of the cell geometry,
+            or alternatively the radius
+
+    /micro/test
+        /micro/test/useTestMode
+            Run a "test mode" of the simulation. Rather than placing cells,
+            the sensitive detector becomes the periodic region. This permits
+            a user to know how much energy is `leaking' from the periodic
+            domain.
+
+    /micro/phys
+        /micro/phys/addPhysics string
+            Specify the physics list to use. Choices are:
+                EmDNAPhysics
+                EmDNAPhysics_option1
+                EmLivermorePhysics
+                EmPenelopePhysics
+                EmStandardPhysics
+                EmStandardPhysics_option[1-4]
+        /micro/phys/minEnergy double unit
+            Specify a minimum energy cut for the physics list, where the
+            physics list permits it.
+
+    /micro/gun
+        /micro/gun/useRandPos
+            Direct the simulation to position the particle source at a new
+            random position inside the periodic box for each new event/
+        /micro/gun/useRandDir
+            Direct the simulation to fire particles in a random direction
+            from each point.
+        /micro/gun/setPos threevector unit
+            Specify a dimensioned three vector which will be used as the
+            particle source location.
+        /micro/gun/setDir threevector
+            Specify a vector along which to fire particles.
+
+
+

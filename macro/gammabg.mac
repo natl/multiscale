@@ -1,0 +1,66 @@
+/run/printProgress 100000
+/run/verbose 1
+#/tracking/verbose 1
+
+# define physics
+
+/macro/phys/addPhysics G4EmPenelopePhysics
+/run/setCut 10 nm
+/macro/phys/minEnergy 100 eV
+
+# define geometry
+
+/macro/det/useCustomGeometry true
+/macro/det/geometryName microplate
+
+/macro/det/energyThreshold 3 MeV
+# initialize
+
+/run/initialize
+
+# define source
+
+/macro/source/geometry sphere
+/macro/source/centre -5.5 5.5 0.0 mm
+/macro/source/rad 30 mm
+/macro/source/angDist cos
+
+
+
+#energy distribuition at location 2, Malczewski 2011
+#This measurement was made collimated, centre of room
+
+/macro/source/particle gamma
+/macro/source/histPoint 0.0000 0.000
+/macro/source/histPoint 0.0074 0.000
+/macro/source/histPoint 0.2502 0.185
+/macro/source/histPoint 0.5008 0.0536
+/macro/source/histPoint 1.0056 0.0374
+/macro/source/histPoint 1.5562 0.0187
+/macro/source/histPoint 2.0562 0.00410
+/macro/source/histPoint 2.7346 0.00240
+
+/macro/source/initialize
+
+/control/shell export G4HEPREPFILE_NAME=gammabg
+
+
+#Visualisation
+
+/vis/open HepRepFile
+/vis/heprep/setFileDir ./data/
+/vis/heprep/setOverwrite false
+/vis/drawVolume world
+/vis/viewer/flush
+/vis/scene/add/trajectories
+/vis/scene/add/hits
+/vis/scene/endOfEventAction accumulate 1000
+
+
+# run
+
+/run/beamOn 100000
+
+#/control/shell export G4HEPREPFILE_NAME=G4DATA
+
+

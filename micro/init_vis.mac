@@ -1,0 +1,56 @@
+# Set some default verbose
+/control/verbose 2
+/control/saveHistory
+/run/verbose 2
+/run/setCut 1 um
+
+# Set testing mode
+# /micro/test/useTestMode
+
+# Define the box
+/micro/det/setSize 200 um
+/micro/det/setMargin 0.001 nm
+
+# define the cells
+/micro/cell/setNumber 10
+
+/micro/cell/setShape ellipse
+/micro/cell/setSizeHalfX 10 um
+/micro/cell/setSizeHalfY 5 um
+/micro/cell/setSizeHalfZ 5 um
+
+#/micro/cell/setShape sphere
+#/micro/cell/setSizeRadius 1 um
+
+#Set Physics List
+/micro/phys/addPhysics G4EmPenelopePhysics
+/micro/phys/minEnergy 100 eV
+#/micro/phys/addPhysics G4EmLivermorePhysics
+#/micro/phys/minEnergy 250 eV
+#/micro/phys/addPhysics G4EmDNAPhysics
+
+/run/initialize
+
+# Define the general particle source to be of the same volume
+/gps/pos/type Volume
+/gps/pos/shape Para
+/gps/pos/halfx 50 um
+/gps/pos/halfy 50 um
+/gps/pos/halfz 50 um
+
+# Update the geometry (possibly irrelevant)
+/micro/det/update
+
+# Description of primaries
+/gps/particle e-
+# Mono energetic particles
+/gps/ene/type Mono
+/gps/ene/mono 100 keV
+# Or a power law
+#/gps/ene/type Pow
+#/gps/ene/alpha -1.657
+#/gps/ene/min 100 eV
+#/gps/ene/max 100 keV
+
+# Visualization setting
+/control/execute vis.mac

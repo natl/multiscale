@@ -1,0 +1,41 @@
+/tracking/verbose 0
+/run/verbose 2
+
+# Set testing mode
+/micro/test/useTestMode
+
+# Define the box
+/micro/det/setSize 200 um
+/micro/det/setMargin 0.001 nm
+
+# Set Physics List
+/micro/phys/addPhysics G4EmPenelopePhysics
+/micro/phys/minEnergy 100 eV
+#/micro/phys/addPhysics G4EmLivermorePhysics
+#/micro/phys/minEnergy 250 eV
+#/micro/phys/addPhysics G4EmDNAPhysics
+
+/run/initialize
+
+# Use a point source at centre for testing
+/gps/pos/type Point
+/gps/pos/centre 0 0 0 um
+/gps/ang/type iso
+
+# Description of primaries
+/gps/particle e-
+# Mono energetic particles
+/gps/ene/type Mono
+/gps/ene/mono 100 keV
+# Or a power law
+#/gps/ene/type Pow
+#/gps/ene/alpha -1.657
+#/gps/ene/min 100 eV
+#/gps/ene/max 100 keV
+
+/gun/particle e-
+/gun/energy 100 keV
+
+/run/setCut 1 um
+/run/printProgress 10000
+/run/beamOn 100000

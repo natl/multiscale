@@ -1,0 +1,37 @@
+/tracking/verbose 0
+/run/verbose 2
+
+# Set testing mode
+/micro/test/useTestMode
+
+# Define the box
+/micro/det/setSize 200 um
+/micro/det/setMargin 1 nm
+
+# Set Physics List
+/micro/phys/addPhysics G4EmPenelopePhysics
+/micro/phys/minEnergy 100 eV
+#/micro/phys/addPhysics G4EmLivermorePhysics
+#/micro/phys/minEnergy 250 eV
+#/micro/phys/addPhysics G4EmDNAPhysics
+
+/run/initialize
+
+/gun/particle e-
+/gun/energy 200 keV
+
+#/macro/source/hist 0.000 0
+#/macro/source/hist 0.050 0
+#/macro/source/hist 0.050 1
+#/macro/source/hist 0.080 1
+#/macro/source/hist 0.080 0
+
+#/macro/source/histFile test.hist
+
+/micro/gun/useRandPos
+/micro/gun/useRandDir
+
+
+/run/setCut 1 um
+/run/printProgress 1000
+/run/beamOn 100000

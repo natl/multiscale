@@ -1,0 +1,36 @@
+hadd Target file: det-rect_detCent-center_rotd-60_rotdax-x_material-H2O_src-sphereCos_particle-electron_en-1MeV_enThresh-100keV.root
+hadd Source file 1: macro.root
+
+Processing analysis.C("det-rect_detCent-center_rotd-60_rotdax-x_material-H2O_src-sphereCos_particle-electron_en-1MeV_enThresh-100keV.root")...
+hadd Target file: det-rect_detCent-center_rotd-0_rotdax-y_material-H2O_src-sphereCos_particle-electron_en-1MeV_enThresh-100keV.root
+hadd Source file 1: macro.root
+running the following macros: 
+det-rect_detCent-center_rotd-60_rotdax-x_material-H2O_src-sphereCos_particle-electron_en-1MeV_enThresh-100keV.mac det-rect_detCent-center_rotd-0_rotdax-y_material-H2O_src-sphereCos_particle-electron_en-1MeV_enThresh-100keV.mac det-rect_detCent-x_rotd-0_rotdax-z_material-H2O_src-sphereCos_particle-electron_en-1MeV_enThresh-50keV.mac det-rect_detCent-negxy_rotd-60_rotdax-x_material-H2O_src-sphereCos_particle-electron_en-1MeV_enThresh-100keV.mac det-rect_detCent-x_rotd-60_rotdax-x_material-H2O_src-sphereCos_particle-electron_en-1MeV_enThresh-50keV.mac det-rect_detCent-negxy_rotd-90_rotdax-x_material-H2O_src-sphereCos_particle-electron_en-1MeV_enThresh-50keV.mac det-rect_detCent-negxy_rotd-30_rotdax-z_material-H2O_src-sphereCos_particle-electron_en-1MeV_enThresh-100keV.mac det-rect_detCent-negxy_rotd-0_rotdax-x_material-H2O_src-sphereCos_particle-electron_en-1MeV_enThresh-100keV.mac det-rect_detCent-y_rotd-60_rotdax-z_material-H2O_src-sphereCos_particle-electron_en-1MeV_enThresh-100keV.mac det-rect_detCent-y_rotd-30_rotdax-x_material-H2O_src-sphereCos_particle-electron_en-1MeV_enThresh-50keV.mac det-rect_detCent-center_rotd-0_rotdax-x_material-H2O_src-sphereCos_particle-electron_en-1MeV_enThresh-50keV.mac det-rect_detCent-y_rotd-90_rotdax-x_material-H2O_src-sphereCos_particle-electron_en-1MeV_enThresh-50keV.mac det-rect_detCent-x_rotd-30_rotdax-y_material-H2O_src-sphereCos_particle-electron_en-1MeV_enThresh-50keV.mac det-rect_detCent-y_rotd-90_rotdax-y_material-H2O_src-sphereCos_particle-electron_en-1MeV_enThresh-100keV.mac det-rect_detCent-y_rotd-0_rotdax-x_material-H2O_src-sphereCos_particle-electron_en-1MeV_enThresh-100keV.mac det-rect_detCent-x_rotd-60_rotdax-x_material-H2O_src-sphereCos_particle-electron_en-1MeV_enThresh-100keV.mac det-rect_detCent-center_rotd-30_rotdax-x_material-H2O_src-sphereCos_particle-electron_en-1MeV_enThresh-50keV.mac det-rect_detCent-y_rotd-0_rotdax-x_material-H2O_src-sphereCos_particle-electron_en-1MeV_enThresh-50keV.mac det-rect_detCent-center_rotd-60_rotdax-y_material-H2O_src-sphereCos_particle-electron_en-1MeV_enThresh-50keV.mac det-rect_detCent-y_rotd-30_rotdax-y_material-H2O_src-sphereCos_particle-electron_en-1MeV_enThresh-100keV.mac det-rect_detCent-negxy_rotd-90_rotdax-x_material-H2O_src-sphereCos_particle-electron_en-1MeV_enThresh-100keV.mac det-rect_detCent-center_rotd-90_rotdax-z_material-H2O_src-sphereCos_particle-electron_en-1MeV_enThresh-100keV.mac det-rect_detCent-negxy_rotd-60_rotdax-z_material-H2O_src-sphereCos_particle-electron_en-1MeV_enThresh-50keV.mac det-rect_detCent-x_rotd-0_rotdax-z_material-H2O_src-sphereCos_particle-electron_en-1MeV_enThresh-100keV.mac det-rect_detCent-negxy_rotd-0_rotdax-x_material-H2O_src-sphereCos_particle-electron_en-1MeV_enThresh-50keV.mac det-rect_detCent-center_rotd-30_rotdax-y_material-H2O_src-sphereCos_particle-electron_en-1MeV_enThresh-100keV.mac det-rect_detCent-x_rotd-90_rotdax-z_material-H2O_src-sphereCos_particle-electron_en-1MeV_enThresh-50keV.mac det-rect_detCent-center_rotd-90_rotdax-z_material-H2O_src-sphereCos_particle-electron_en-1MeV_enThresh-50keV.mac det-rect_detCent-negxy_rotd-30_rotdax-z_material-H2O_src-sphereCos_particle-electron_en-1MeV_enThresh-50keV.mac det-rect_detCent-x_rotd-90_rotdax-x_material-H2O_src-sphereCos_particle-electron_en-1MeV_enThresh-100keV.mac det-rect_detCent-y_rotd-60_rotdax-z_material-H2O_src-sphereCos_particle-electron_en-1MeV_enThresh-50keV.mac det-rect_detCent-x_rotd-30_rotdax-z_material-H2O_src-sphereCos_particle-electron_en-1MeV_enThresh-100keV.mac
+Now running det-rect_detCent-center_rotd-60_rotdax-x_material-H2O_src-sphereCos_particle-electron_en-1MeV_enThresh-100keV.mac
+root -b -q -l 'analysis.C("det-rect_detCent-center_rotd-60_rotdax-x_material-H2O_src-sphereCos_particle-electron_en-1MeV_enThresh-100keV.root")'
+Now running det-rect_detCent-center_rotd-0_rotdax-y_material-H2O_src-sphereCos_particle-electron_en-1MeV_enThresh-100keV.mac
+root -b -q -l 'analysis.C("det-rect_detCent-center_rotd-0_rotdax-y_material-H2O_src-sphereCos_particle-electron_en-1MeV_enThresh-100k
+Processing analysis.C("det-rect_detCent-center_rotd-0_rotdax-y_material-H2O_src-sphereCos_particle-electron_en-1MeV_enThresh-100keV.root")...
+hadd Target file: det-rect_detCent-x_rotd-0_rotdax-z_material-H2O_src-sphereCos_particle-electron_en-1MeV_enThresh-50keV.root
+hadd Source file 1: macro.root
+
+Processing analysis.C("det-rect_detCent-x_rotd-0_rotdax-z_material-H2O_src-sphereCos_particle-electron_en-1MeV_enThresh-50keV.root")...
+hadd Target file: det-rect_detCent-negxy_rotd-60_rotdax-x_material-H2O_src-sphereCos_particle-electron_en-1MeV_enThresh-100keV.root
+hadd Source file 1: macro.root
+
+Processing analysis.C("det-rect_detCent-negxy_rotd-60_rotdax-x_material-H2O_src-sphereCos_particle-electron_en-1MeV_enThresh-100keV.root")...
+hadd Target file: det-rect_detCent-x_rotd-60_rotdax-x_material-H2O_src-sphereCos_particle-electron_en-1MeV_enThresh-50keV.root
+hadd Source file 1: macro.root
+
+Processing analysis.C("det-rect_detCent-x_rotd-60_rotdax-x_material-H2O_src-sphereCos_particle-electron_en-1MeV_enThresh-50keV.root")...
+hadd Target file: det-rect_detCent-negxy_rotd-90_rotdax-x_material-H2O_src-sphereCos_particle-electron_en-1MeV_enThresh-50keV.root
+hadd Source file 1: macro.root
+eV.root")'
+Now running det-rect_detCent-x_rotd-0_rotdax-z_material-H2O_src-sphereCos_particle-electron_en-1MeV_enThresh-50keV.mac
+root -b -q -l 'analysis.C("det-rect_detCent-x_rotd-0_rotdax-z_material-H2O_src-sphereCos_particle-electron_en-1MeV_enThresh-50keV.root")'
+Now running det-rect_detCent-negxy_rotd-60_rotdax-x_material-H2O_src-sphereCos_particle-electron_en-1MeV_enThresh-100keV.mac
+root -b -q -l 'analysis.C("det-rect_detCent-negxy_rotd-60_rotdax-x_material-H2O_src-sphereCos_particle-electron_en-1MeV_enThresh-100keV.root")'
+Now running det-rect_detCent-x_rotd-60_rotdax-x_material-H2O_src-sphereCos_particle-electron_en-1MeV_enThresh-50keV.mac
+root -b -q -l 'analysis.C("det-rect_detCent-x_rotd-60_rotdax-x_material-H2O_src-sphereCos_particle-electron_en-1MeV_enThresh-50keV.root")'
+Now running det-rect_detCent-negxy_rotd-90_rotdax-x_material-H2O_src-sphereCos_particle-electron_en-1MeV_enThresh-50keV.mac
+root -b -q -l 'analysis.C("det-rect_detCent-negxy_rotd-90_rotdax-x_material-H2O_src-sphereCos_particle-electron_en-1MeV_enThresh-50keV.root")'

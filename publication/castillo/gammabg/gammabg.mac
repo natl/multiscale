@@ -1,0 +1,57 @@
+/run/verbose 1
+#/tracking/verbose 1
+
+# define physics
+
+/macro/phys/addPhysics G4EmPenelopePhysics
+/run/setCut 1 um
+/macro/phys/minEnergy 100 eV
+
+# define geometry
+/macro/det/useCustomGeometry false
+/macro/det/worldSize 1 1 1 m
+/macro/det/worldMat G4_AIR
+
+/macro/det/geometry box
+/macro/det/size 5 5 5 mm
+/macro/det/sampleMat G4_WATER
+
+/macro/det/energyThreshold 3 MeV
+# initialize
+
+/run/initialize
+
+# define source
+
+/macro/source/geometry sphere
+/macro/source/centre 0 0 0 mm
+/macro/source/rad 100 mm
+/macro/source/angDist cos
+
+
+/macro/source/particle gamma
+/macro/source/dist mono
+/macro/source/energy 1.46 MeV
+
+/macro/source/initialize
+
+#Visualisation
+
+#/vis/open HepRepFile
+#/vis/heprep/setFileDir ./macrodata/
+#/vis/heprep/setOverwrite false
+#/vis/drawVolume world
+#/vis/viewer/flush
+#/vis/scene/add/trajectories
+#/vis/scene/add/hits
+#/vis/scene/endOfEventAction accumulate 1000
+
+
+# run
+
+/run/printProgress 100000
+/run/beamOn 10000000
+
+#/control/shell export G4HEPREPFILE_NAME=G4DATA
+
+

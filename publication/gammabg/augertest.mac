@@ -1,0 +1,60 @@
+/run/verbose 1
+#/tracking/verbose 1
+
+# define physics
+
+/macro/phys/addPhysics G4EmPenelopePhysics
+/run/setCut 1 um
+/macro/phys/minEnergy 100 eV
+
+# define geometry
+
+/macro/det/useCustomGeometry true
+/macro/det/geometryName microplate
+
+/macro/det/energyThreshold 3 MeV
+# initialize
+
+/run/initialize
+
+# define source
+
+/macro/source/geometry sphere
+/macro/source/centre -5.5 5.5 -2.5 mm
+/macro/source/rad 0.3 mm
+/macro/source/angDist cos
+
+#energy distribuition at location 2, Malczewski 2011
+#This measurement was made collimated, centre of room
+
+/macro/source/particle e-
+/macro/source/energy 100 keV
+
+/macro/source/initialize
+
+#Visualisation
+
+#/vis/open HepRepFile
+#/vis/heprep/setFileDir ./macrodata/
+#/vis/heprep/setOverwrite false
+#/vis/drawVolume world
+#/vis/viewer/flush
+#/vis/scene/add/trajectories
+#/vis/scene/add/hits
+#/vis/scene/endOfEventAction accumulate 1000
+
+
+# run
+
+/process/em/auger false
+/process/em/augerCascade false
+/process/em/fluo false
+/process/em/pixe false
+
+/run/printProgress 10000
+
+/run/beamOn 100000
+
+#/control/shell export G4HEPREPFILE_NAME=G4DATA
+
+

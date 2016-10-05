@@ -1,0 +1,62 @@
+/tracking/verbose 0
+/run/verbose 2
+
+/run/setCut 1 nm
+/cuts/setLowEdge 10 eV
+/micro/phys/addPhysics G4EmStandardPhysics_option4
+/micro/phys/minEnergy 10 eV
+
+/process/em/auger true
+/process/em/augerCascade true
+/process/em/fluo true
+/process/em/pixe true
+
+
+
+
+# Define the box
+/micro/det/setSize 200 200 200 um
+/micro/det/setMacroSize 10 10 15 mm
+
+# define the cells
+/micro/cell/setNumber 4000
+
+/micro/cell/setShape rod
+/micro/cell/setSizeRadius 0.5 um
+/micro/cell/setSizeHalfX 1 um
+
+
+
+/run/initialize
+
+# Update the geometry
+#/micro/det/update
+
+# Output to HepRep
+
+#/vis/open HepRepFile
+#/vis/heprep/setFileDir ./microdata/
+#/vis/heprep/setOverwrite false
+#/vis/drawVolume worlds
+#/vis/viewer/flush
+#/vis/scene/add/trajectories
+#/vis/scene/add/hits
+#/vis/scene/endOfEventAction accumulate 100
+
+
+# Description of primaries
+#/gun/particle e-
+#/gun/energy 100 keV
+#/micro/gun/histFile betasecondaries.hist
+/micro/gun/rootFile secondary_ps.root
+
+#isotropic or fixed direction
+#/micro/gun/useRandDir
+#/micro/gun/setDir 1 0 0
+
+#Positioned randomly in box (changing each event) or fixed
+#/micro/gun/useRandPos
+#/micro/gun/setPos 0 0 0 um
+
+/run/printProgress 100000
+/run/beamOn 1000000

@@ -1,0 +1,74 @@
+/run/printProgress 10000
+/run/verbose 1
+#/tracking/verbose 1
+
+# define physics
+
+/macro/phys/addPhysics G4EmPenelopePhysics
+/run/setCut 10 nm
+/macro/phys/minEnergy 3 MeV
+
+# define geometry
+
+/macro/det/useCustomGeometry true
+/macro/det/geometryName microplate
+
+
+# initialize
+
+/run/initialize
+
+# define source
+
+
+
+/macro/source/geometry microplate
+/macro/source/angDist iso
+
+
+
+#K40 Electron Spectrum
+#From Livechart table of nuclides IAEA Nuclear Structure and Decay Data
+#https://www-nds.iaea.org/relnsd/vcharthtml/VChartHTML.html
+
+#bins sum to 89.09%, Geant4 will handle the normalisation here.
+#Don't forget to consider in the output that this corresponds to Betas only.
+/macro/source/particle e-
+/macro/source/histPoint 0.0000 0.00
+/macro/source/histPoint 0.0020 0.09849
+/macro/source/histPoint 0.0040 0.09857
+/macro/source/histPoint 0.0060 0.09909
+/macro/source/histPoint 0.0080 0.09959
+/macro/source/histPoint 0.0100 0.10019
+/macro/source/histPoint 0.0200 0.5131
+/macro/source/histPoint 0.0400 1.1001
+/macro/source/histPoint 0.0600 1.2026
+/macro/source/histPoint 0.0800 1.3010
+/macro/source/histPoint 0.1000 1.3936
+/macro/source/histPoint 0.2000 8.167
+/macro/source/histPoint 0.4000 20.29
+/macro/source/histPoint 0.6000 21.38
+/macro/source/histPoint 0.8000 17.85
+/macro/source/histPoint 1.0000 11.158
+/macro/source/histPoint 1.2000 4.008
+/macro/source/histPoint 1.3110 0.2314
+
+/macro/source/initialize
+
+#Visualisation
+
+/vis/open HepRepFile
+/vis/heprep/setFileDir ./macrodata/
+/vis/heprep/setOverwrite false
+/vis/drawVolume world
+/vis/viewer/flush
+/vis/scene/add/trajectories
+/vis/scene/add/hits
+/vis/scene/endOfEventAction accumulate 1000
+
+
+# run
+
+/run/beamOn 1000000
+
+#/control/shell export G4HEPREPFILE_NAME=G4DATA

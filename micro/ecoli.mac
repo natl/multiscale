@@ -1,0 +1,62 @@
+/tracking/verbose 0
+/run/verbose 2
+/run/setCut 10 nm
+
+# Set testing mode
+# /micro/test/useTestMode
+
+# Define the box
+/micro/det/setSize 200 200 200 um
+/micro/det/setMacroSize 10 10 15 mm
+
+# define the cells
+/micro/cell/setNumber 4000
+
+/micro/cell/setShape ellipse
+/micro/cell/setSizeHalfX 2 um
+/micro/cell/setSizeHalfY 1 um
+/micro/cell/setSizeHalfZ 1 um
+
+#/micro/cell/setShape sphere
+#/micro/cell/setSizeRadius 1 um
+
+#Set Physics List
+/micro/phys/addPhysics G4EmPenelopePhysics
+/micro/phys/minEnergy 100 eV
+#/micro/phys/addPhysics G4EmLivermorePhysics
+#/micro/phys/minEnergy 250 eV
+#/micro/phys/addPhysics G4EmDNAPhysics
+
+/run/initialize
+
+# Update the geometry
+#/micro/det/update
+
+# Output to HepRep
+
+/vis/open HepRepFile
+/vis/heprep/setFileDir ./microdata/
+/vis/heprep/setOverwrite false
+/vis/drawVolume worlds
+/vis/viewer/flush
+/vis/scene/add/trajectories
+/vis/scene/add/hits
+/vis/scene/endOfEventAction accumulate 100
+
+
+# Description of primaries
+/gun/particle e-
+#/gun/energy 100 keV
+#/micro/gun/histFile betasecondaries.hist
+/micro/gun/rootFile secondary_ps.root
+
+#isotropic or fixed direction
+#/micro/gun/useRandDir
+#/micro/gun/setDir 1 0 0
+
+#Positioned randomly in box (changing each event) or fixed
+#/micro/gun/useRandPos
+#/micro/gun/setPos 0 0 0 um
+
+/run/printProgress 10000
+/run/beamOn 1000000

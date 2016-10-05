@@ -1,0 +1,54 @@
+# Physics
+/macro/phys/addPhysics G4EmStandardPhysics
+/run/setCut 10 um
+
+# Geometry
+/macro/det/useCustomGeometry false
+/macro/det/worldSize 5 5 5 m
+/macro/det/worldMat G4_AIR
+
+
+/macro/det/geometry box
+/macro/det/size 10 10 2 cm
+/macro/det/sampleMat G4_AIR
+
+/run/initialize
+
+
+# source
+
+/macro/source/geometry plane
+/macro/source/halfx 10 cm
+/macro/source/halfy 10 cm
+/macro/source/angDist cos
+/macro/source/centre 0 0 0 cm
+/macro/source/particle gamma
+/macro/source/dist mono
+/macro/source/energy 1 MeV
+#/macro/source/rotVector 1 0 0
+#/macro/source/rotAngle 90
+
+/macro/source/initialize
+
+
+# SD
+
+/macro/det/energyThreshold 50 keV
+
+# Vis
+
+/vis/open HepRepFile
+/vis/heprep/setFileDir ./planedata/
+/vis/heprep/setOverwrite false
+/vis/drawVolume world
+/vis/viewer/flush
+/vis/scene/add/trajectories
+/vis/scene/add/hits
+/vis/scene/endOfEventAction accumulate 100
+/vis/viewer/zoom 10
+
+/vis/scene/add/trajectories
+# run
+
+/run/beamOn 100
+

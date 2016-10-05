@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="macro" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Release">
+				<Option output="bin/Release/macro" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add directory="/home/nlampe/install/geant4.10.01.p02/include/Geant4" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add directory="/home/nlampe/install/geant4.10.01.p02/include/Geant4" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+		</Compiler>
+		<Unit filename="CMakeLists.txt" />
+		<Unit filename="gammabg.mac" />
+		<Unit filename="include/MacroAccumulatorHit.hh" />
+		<Unit filename="include/MacroActionInitialization.hh" />
+		<Unit filename="include/MacroAnalysis.hh" />
+		<Unit filename="include/MacroDetectorConstruction.hh" />
+		<Unit filename="include/MacroDetectorMessenger.hh" />
+		<Unit filename="include/MacroEnergyDepoHit.hh" />
+		<Unit filename="include/MacroEventAction.hh" />
+		<Unit filename="include/MacroHistoManager.hh" />
+		<Unit filename="include/MacroPhysicsList.hh" />
+		<Unit filename="include/MacroPhysicsListMessenger.hh" />
+		<Unit filename="include/MacroPrimaryGeneratorAction.hh" />
+		<Unit filename="include/MacroPrimaryGeneratorMessenger.hh" />
+		<Unit filename="include/MacroRunAction.hh" />
+		<Unit filename="include/MacroSecondaryHit.hh" />
+		<Unit filename="include/MacroSensitiveDetector.hh" />
+		<Unit filename="init_vis.mac" />
+		<Unit filename="kelectron.mac" />
+		<Unit filename="macro.cc" />
+		<Unit filename="macroanalysis.C">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/MacroAccumulatorHit.cc" />
+		<Unit filename="src/MacroActionInitialization.cc" />
+		<Unit filename="src/MacroDetectorConstruction.cc" />
+		<Unit filename="src/MacroDetectorMessenger.cc" />
+		<Unit filename="src/MacroEnergyDepoHit.cc" />
+		<Unit filename="src/MacroEventAction.cc" />
+		<Unit filename="src/MacroHistoManager.cc" />
+		<Unit filename="src/MacroPhysicsList.cc" />
+		<Unit filename="src/MacroPhysicsListMessenger.cc" />
+		<Unit filename="src/MacroPrimaryGeneratorAction.cc" />
+		<Unit filename="src/MacroPrimaryGeneratorMessenger.cc" />
+		<Unit filename="src/MacroRunAction.cc" />
+		<Unit filename="src/MacroSecondaryHit.cc" />
+		<Unit filename="src/MacroSensitiveDetector.cc" />
+		<Unit filename="testing/box.mac" />
+		<Unit filename="testing/fixed_energy/generate.py" />
+		<Unit filename="testing/fixed_energy/run.py" />
+		<Unit filename="testing/plane.mac" />
+		<Unit filename="testing/point.mac" />
+		<Unit filename="testing/sources/planecos/clean.sh" />
+		<Unit filename="testing/sources/planecos/generate.py" />
+		<Unit filename="testing/sources/planecos/run.py" />
+		<Unit filename="testing/sources/planeiso/clean.sh" />
+		<Unit filename="testing/sources/planeiso/generate.py" />
+		<Unit filename="testing/sources/planeiso/run.py" />
+		<Unit filename="testing/sources/run.sh" />
+		<Unit filename="testing/sources/spherecos/clean.sh" />
+		<Unit filename="testing/sources/spherecos/generate.py" />
+		<Unit filename="testing/sources/spherecos/run.py" />
+		<Unit filename="testing/sources/sphereiso/clean.sh" />
+		<Unit filename="testing/sources/sphereiso/generate.py" />
+		<Unit filename="testing/sources/sphereiso/run.py" />
+		<Unit filename="testing/sphere.mac" />
+		<Unit filename="vis.mac" />
+		<Extensions>
+			<envvars />
+			<code_completion />
+			<lib_finder disable_auto="1" />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

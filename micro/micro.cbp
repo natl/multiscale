@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="micro" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Release">
+				<Option output="bin/Release/micro" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add directory="include" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add directory="/home/nlampe/install/geant4.10.02/include/Geant4" />
+		</Compiler>
+		<ResourceCompiler>
+			<Add directory="/home/nlampe/install/geant4.10.02/include/Geant4" />
+		</ResourceCompiler>
+		<Linker>
+			<Add directory="/home/nlampe/install/geant4.10.02/include/Geant4" />
+		</Linker>
+		<Unit filename="CMakeLists.txt" />
+		<Unit filename="README" />
+		<Unit filename="ecoli.mac" />
+		<Unit filename="ellipse.mac" />
+		<Unit filename="include/MicroActionInitialization.hh" />
+		<Unit filename="include/MicroAnalysis.hh" />
+		<Unit filename="include/MicroCellHistoManager.hh" />
+		<Unit filename="include/MicroCellInteriorHit.hh" />
+		<Unit filename="include/MicroCellSensitiveDetector.hh" />
+		<Unit filename="include/MicroCellWallHit.hh" />
+		<Unit filename="include/MicroDetectorConstruction.hh" />
+		<Unit filename="include/MicroDetectorMessenger.hh" />
+		<Unit filename="include/MicroEventAction.hh" />
+		<Unit filename="include/MicroEventInformation.hh" />
+		<Unit filename="include/MicroParallelWorldConstruction.hh" />
+		<Unit filename="include/MicroPeriodicBoundaryPhysics.hh" />
+		<Unit filename="include/MicroPeriodicBoundaryProcess.hh" />
+		<Unit filename="include/MicroPhysicsList.hh" />
+		<Unit filename="include/MicroPhysicsListMessenger.hh" />
+		<Unit filename="include/MicroPrimaryGeneratorAction.hh" />
+		<Unit filename="include/MicroPrimaryGeneratorMessenger.hh" />
+		<Unit filename="include/MicroRunAction.hh" />
+		<Unit filename="include/MicroSteppingAction.hh" />
+		<Unit filename="include/MicroTesterHistoManager.hh" />
+		<Unit filename="include/MicroTesterHit.hh" />
+		<Unit filename="include/MicroTesterMessenger.hh" />
+		<Unit filename="include/MicroTesterSensitiveDetector.hh" />
+		<Unit filename="include/MicroTrackInformation.hh" />
+		<Unit filename="include/MicroTrackingAction.hh" />
+		<Unit filename="init_vis.mac" />
+		<Unit filename="micro.cc" />
+		<Unit filename="micro.mac" />
+		<Unit filename="microanalysis.C">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="point_source_mono.in" />
+		<Unit filename="run.in" />
+		<Unit filename="spheres.mac">
+			<Option compile="1" />
+			<Option link="1" />
+		</Unit>
+		<Unit filename="src/MicroActionInitialization.cc" />
+		<Unit filename="src/MicroCellHistoManager.cc" />
+		<Unit filename="src/MicroCellInteriorHit.cc" />
+		<Unit filename="src/MicroCellSensitiveDetector.cc" />
+		<Unit filename="src/MicroCellWallHit.cc" />
+		<Unit filename="src/MicroDetectorConstruction.cc" />
+		<Unit filename="src/MicroDetectorMessenger.cc" />
+		<Unit filename="src/MicroEventAction.cc" />
+		<Unit filename="src/MicroEventInformation.cc" />
+		<Unit filename="src/MicroParallelWorldConstruction.cc" />
+		<Unit filename="src/MicroPeriodicBoundaryPhysics.cc" />
+		<Unit filename="src/MicroPeriodicBoundaryProcess.cc" />
+		<Unit filename="src/MicroPhysicsList.cc" />
+		<Unit filename="src/MicroPhysicsListMessenger.cc" />
+		<Unit filename="src/MicroPrimaryGeneratorAction.cc" />
+		<Unit filename="src/MicroPrimaryGeneratorMessenger.cc" />
+		<Unit filename="src/MicroRunAction.cc" />
+		<Unit filename="src/MicroSteppingAction.cc" />
+		<Unit filename="src/MicroTesterHistoManager.cc" />
+		<Unit filename="src/MicroTesterHit.cc" />
+		<Unit filename="src/MicroTesterMessenger.cc" />
+		<Unit filename="src/MicroTesterSensitiveDetector.cc" />
+		<Unit filename="src/MicroTrackInformation.cc" />
+		<Unit filename="src/MicroTrackingAction.cc" />
+		<Unit filename="test.hist" />
+		<Unit filename="testfromcenter.mac" />
+		<Unit filename="testing.mac" />
+		<Unit filename="vis.mac" />
+		<Extensions>
+			<envvars />
+			<code_completion />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

@@ -1,0 +1,21 @@
+
+#/control/execute vis.mac
+/tracking/verbose 0
+/run/verbose 2
+
+
+/gps/particle e-
+
+#/gps/ene/type Pow
+#/gps/ene/alpha -1.657
+#/gps/ene/min 100 eV
+#/gps/ene/max 100 keV
+
+/gps/ene/type Mono
+/gps/ene/mono 100 keV
+
+/gps/pos/type Point
+/gps/ang/type iso
+
+
+/run/beamOn 10000000
